@@ -1,7 +1,7 @@
 /* General body styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f9fc;
+    background-color: #f0f4f8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@ body {
 .container {
     background-color: #fff;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     width: 400px;
     text-align: center;
@@ -23,7 +23,8 @@ body {
 h1 {
     color: #333;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 600;
 }
 
 /* Form groups styling */
@@ -39,9 +40,14 @@ label {
     margin-bottom: 8px;
 }
 
-/* Input field styling */
-input[type="text"] {
-    width: 100%;
+/* Styling for the bill input in both USD and INR */
+.bill-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bill-input input {
+    width: 48%;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
@@ -49,13 +55,21 @@ input[type="text"] {
     margin-bottom: 10px;
 }
 
+/* Input field styling */
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
 input[type="range"] {
     width: 100%;
     margin-bottom: 10px;
 }
 
-#tipAmountUSD, #tipAmountINR, #totalAmountUSD, #totalAmountINR {
-    background-color: #e0e0e0;
+#tipAmountUSD, #tipAmountINR, #totalAmountUSD, #totalAmountINR, #billAmountINR {
+    background-color: #f0f0f0;
     color: #555;
     cursor: not-allowed;
 }
@@ -76,10 +90,13 @@ input[type="range"] {
 #tipPercentage {
     font-size: 18px;
     font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
 }
 
 /* Error message styling */
 #error-message {
     color: red;
     font-weight: bold;
+    margin-top: 10px;
 }

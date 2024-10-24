@@ -12,8 +12,11 @@
         
         <form id="tip-form">
             <div class="form-group">
-                <label for="billAmount">Bill Total (in USD):</label>
-                <input type="text" id="billAmount" placeholder="Enter total bill" required>
+                <label for="billAmount">Bill Total:</label>
+                <div class="bill-input">
+                    <input type="text" id="billAmount" placeholder="Enter total bill in USD" required>
+                    <input type="text" id="billAmountINR" disabled placeholder="INR Equivalent">
+                </div>
             </div>
 
             <div class="form-group">
