@@ -8,24 +8,42 @@
     <link rel="stylesheet" href="script.js">
 </head>
 <body>
-    <h1>Simple Tip Calculator</h1>
-    
-    <form id="tip-form">
-        <label for="billAmount">Bill Total:</label>
-        <input type="text" id="billAmount" placeholder="Enter total bill" required>
+    <div class="container">
+        <h1>Tip Calculator</h1>
         
-        <label for="tipRange">Tip Percentage:</label>
-        <input type="range" id="tipRange" min="0" max="100" value="15">
-        <span id="tipPercentage">15%</span>
-        
-        <label for="tipAmount">Tip Amount:</label>
-        <input type="text" id="tipAmount" disabled>
-        
-        <label for="totalAmount">Total Bill with Tip:</label>
-        <input type="text" id="totalAmount" disabled>
-        
-        <div id="error-message"></div>
-    </form>
+        <form id="tip-form">
+            <div class="form-group">
+                <label for="billAmount">Bill Total (in USD):</label>
+                <input type="text" id="billAmount" placeholder="Enter total bill" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tipRange">Tip Percentage:</label>
+                <input type="range" id="tipRange" min="0" max="100" value="15">
+                <span id="tipPercentage">15%</span>
+            </div>
+
+            <div class="form-group">
+                <label for="currency">Select Currency:</label>
+                <select id="currency">
+                    <option value="USD" selected>USD (US Dollar)</option>
+                    <option value="INR">INR (Indian Rupee)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tipAmount">Tip Amount:</label>
+                <input type="text" id="tipAmount" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="totalAmount">Total Bill with Tip:</label>
+                <input type="text" id="totalAmount" disabled>
+            </div>
+
+            <div id="error-message"></div>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
