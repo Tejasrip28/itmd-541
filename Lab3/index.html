@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tip Calculator</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
 </head>
 <body>
     <div class="container">
@@ -12,11 +15,9 @@
         
         <form id="tip-form">
             <div class="form-group">
-                <label for="billAmount">Bill Total:</label>
-                <div class="bill-input">
-                    <input type="text" id="billAmount" placeholder="Enter total bill in USD" required>
-                    <input type="text" id="billAmountINR" disabled placeholder="INR Equivalent">
-                </div>
+                <label for="billAmount">Bill Total (USD):</label>
+                <input type="text" id="billAmount" placeholder="Enter total bill in USD" required>
+                <div class="error" id="billError"></div>
             </div>
 
             <div class="form-group">
@@ -25,7 +26,6 @@
                 <span id="tipPercentage">15%</span>
             </div>
 
-            <!-- Tip Amount for both currencies -->
             <div class="form-group">
                 <label>Tip Amount:</label>
                 <div class="dual-output">
@@ -34,7 +34,6 @@
                 </div>
             </div>
 
-            <!-- Total Bill with Tip for both currencies -->
             <div class="form-group">
                 <label>Total Bill with Tip:</label>
                 <div class="dual-output">

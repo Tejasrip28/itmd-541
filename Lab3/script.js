@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const billAmount = document.getElementById('billAmount');
-    const billAmountINR = document.getElementById('billAmountINR');
+    const billError = document.getElementById('billError');
     const tipRange = document.getElementById('tipRange');
     const tipPercentage = document.getElementById('tipPercentage');
     const tipAmountUSD = document.getElementById('tipAmountUSD');
@@ -11,27 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const exchangeRateINR = 84.07;  // USD to INR conversion rate
 
+    const validateBill = () => {
+        const bill = parseFloat(billAmount.value);
+        if (isNaN(bill) || bill <= 0) {
+            billError.textContent = 'Please enter a valid bill amount!';
+            return false;
+        } else {
+            billError.textContent = '';
+            return true;
+        }
+    };
+
     const calculateTip = () => {
+        if (!validateBill()) {
+            clearOutputs();
+            return;
+        }
+
         const bill = parseFloat(billAmount.value);
         const tipPercent = parseFloat(tipRange.value);
 
-        if (isNaN(bill) || bill <= 0) {
-            errorMessage.textContent = 'Please enter a valid bill amount!';
-            clearOutputs();
-            return;
-        } else {
-            errorMessage.textContent = '';
-        }
-
-        // Convert bill amount to INR
-        const billInINR = (bill * exchangeRateINR).toFixed(2);
-        billAmountINR.value = `₹${billInINR}`;
-
-        // Calculate tip and total amounts in USD
         const calculatedTipUSD = (bill * tipPercent / 100).toFixed(2);
         const calculatedTotalUSD = (bill + parseFloat(calculatedTipUSD)).toFixed(2);
 
-        // Calculate tip and total amounts in INR
         const calculatedTipINR = (calculatedTipUSD * exchangeRateINR).toFixed(2);
         const calculatedTotalINR = (calculatedTotalUSD * exchangeRateINR).toFixed(2);
 
@@ -47,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const clearOutputs = () => {
-        billAmountINR.value = '';
         tipAmountUSD.value = '';
         tipAmountINR.value = '';
         totalAmountUSD.value = '';
