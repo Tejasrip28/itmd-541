@@ -8,9 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalAmountUSD = document.getElementById('totalAmountUSD');
     const totalAmountINR = document.getElementById('totalAmountINR');
     const currencySelect = document.getElementById('currencySelect');
-
-    const exchangeRateINR = 84.07; // USD to INR conversion rate
-
+// USD to INR conversion rate
+    const exchangeRateINR = 84.07;
     const validateBill = () => {
         const bill = parseFloat(billAmount.value);
         if (isNaN(bill) || bill <= 0) {
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const calculatedTipINR = (calculatedTipUSD * exchangeRateINR).toFixed(2);
         const calculatedTotalINR = (calculatedTotalUSD * exchangeRateINR).toFixed(2);
 
-        // Display results based on selected currency
+        // results displaying  based on the currency selected
         if (selectedCurrency === 'USD') {
             tipAmountUSD.value = `$${calculatedTipUSD}`;
             totalAmountUSD.value = `$${calculatedTotalUSD}`;
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         totalAmountINR.value = '';
     };
 
-    // Event listeners for inputs
+
     billAmount.addEventListener('input', calculateTip);
     tipRange.addEventListener('input', calculateTip);
     currencySelect.addEventListener('change', calculateTip);
