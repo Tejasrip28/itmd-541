@@ -46,21 +46,12 @@ h2 {
     text-align: left;
 }
 
-/* Add borders to labels */
-label {
-    font-weight: 500;
-    display: block;
-    margin-bottom: 5px;
-    color: #75095e;
-    border: 1px solid black; /* Added black border for labels */
-    padding: 5px; /* Added padding for better spacing */
-}
-
+/* Styling for input boxes */
 input[type="text"], input[type="range"], select {
     padding: 8px;
     font-size: 14px;
     border-radius: 6px;
-    border: 1px solid #dcdde1;
+    border: 2px solid black; /* Added black border for all input boxes */
     width: 100%;
     box-sizing: border-box;
 }
@@ -82,6 +73,7 @@ input[type="text"][disabled] {
 
 .dual-output input {
     width: 48%;
+    border: 2px solid black; /* Added black border for dual output inputs */
 }
 
 .tip-percentage {
