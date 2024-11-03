@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const calculatedTotalINR = (calculatedTotalUSD * exchangeRateINR).toFixed(2);
 
         // Update fields for USD
-        tipAmountUSD.value = `$${calculatedTipUSD}`;
-        totalAmountUSD.value = `$${calculatedTotalUSD}`;
+        tipAmountUSD.value = $${calculatedTipUSD};
+        totalAmountUSD.value = $${calculatedTotalUSD};
 
         // Update fields for INR
-        tipAmountINR.value = `₹${calculatedTipINR}`;
-        totalAmountINR.value = `₹${calculatedTotalINR}`;
+        tipAmountINR.value = ₹${calculatedTipINR};
+        totalAmountINR.value = ₹${calculatedTotalINR};
 
-        tipPercentage.textContent = `${tipPercent}%`;
+        tipPercentage.textContent = ${tipPercent}%;
     };
 
     const clearOutputs = () => {
