@@ -1,60 +1,27 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const billAmount = document.getElementById('billAmount');
-    const billError = document.getElementById('billError');
-    const tipRange = document.getElementById('tipRange');
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('tipForm');
+    const billTotal = document.getElementById('billTotal');
+    const tipSlider = document.getElementById('tipSlider');
     const tipPercentage = document.getElementById('tipPercentage');
-    const tipAmountUSD = document.getElementById('tipAmountUSD');
-    const tipAmountINR = document.getElementById('tipAmountINR');
-    const totalAmountUSD = document.getElementById('totalAmountUSD');
-    const totalAmountINR = document.getElementById('totalAmountINR');
-    const errorMessage = document.getElementById('error-message');
+    const tipAmount = document.getElementById('tipAmount');
+    const totalBill = document.getElementById('totalBill');
 
-    const exchangeRateINR = 84.07;  // USD to INR conversion rate
+    function calculateTip() {
+        const bill = parseFloat(billTotal.value);
+        const tip = parseInt(tipSlider.value);
 
-    const validateBill = () => {
-        const bill = parseFloat(billAmount.value);
-        if (isNaN(bill) || bill <= 0) {
-            billError.textContent = 'Please enter a valid bill amount!';
-            return false;
-        } else {
-            billError.textContent = '';
-            return true;
-        }
-    };
-
-    const calculateTip = () => {
-        if (!validateBill()) {
-            clearOutputs();
+        if (isNaN(bill) || bill < 0) {
+            alert('Please enter a valid positive number for the bill total.');
             return;
         }
 
-        const bill = parseFloat(billAmount.value);
-        const tipPercent = parseFloat(tipRange.value);
+        tipPercentage.value = tip + '%';
+        const tipValue = (bill * tip) / 100;
+        const total = bill + tipValue;
 
-        const calculatedTipUSD = (bill * tipPercent / 100).toFixed(2);
-        const calculatedTotalUSD = (bill + parseFloat(calculatedTipUSD)).toFixed(2);
+        tipAmount.value = '$' + tipValue.toFixed(2);
+        totalBill.value = '$' + total.toFixed(2);
+    }
 
-        const calculatedTipINR = (calculatedTipUSD * exchangeRateINR).toFixed(2);
-        const calculatedTotalINR = (calculatedTotalUSD * exchangeRateINR).toFixed(2);
-
-        // Update fields for USD
-        tipAmountUSD.value = `$${calculatedTipUSD}`;
-        totalAmountUSD.value = `$${calculatedTotalUSD}`;
-
-        // Update fields for INR
-        tipAmountINR.value = `₹${calculatedTipINR}`;
-        totalAmountINR.value = `₹${calculatedTotalINR}`;
-
-        tipPercentage.textContent = `${tipPercent}%`;
-    };
-
-    const clearOutputs = () => {
-        tipAmountUSD.value = '';
-        tipAmountINR.value = '';
-        totalAmountUSD.value = '';
-        totalAmountINR.value = '';
-    };
-
-    billAmount.addEventListener('input', calculateTip);
-    tipRange.addEventListener('input', calculateTip);
+    form.addEventListener('input', calculateTip);
 });

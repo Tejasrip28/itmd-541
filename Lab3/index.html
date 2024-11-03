@@ -3,49 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tip Calculator</title>
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
+    <title>Simple Tip Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Tip Calculator</h1>
-        
-        <form id="tip-form">
+        <form id="tipForm">
             <div class="form-group">
-                <label for="billAmount">Bill Total (USD):</label>
-                <input type="text" id="billAmount" placeholder="Enter total bill in USD" required>
-                <div class="error" id="billError"></div>
+                <label for="billTotal">Bill Total:</label>
+                <input type="text" id="billTotal" name="billTotal" required>
             </div>
-
             <div class="form-group">
-                <label for="tipRange">Tip Percentage:</label>
-                <input type="range" id="tipRange" min="0" max="100" value="15">
-                <span id="tipPercentage">15%</span>
+                <label for="tipSlider">Tip:</label>
+                <input type="range" id="tipSlider" name="tipSlider" min="0" max="100" value="15">
             </div>
-
             <div class="form-group">
-                <label>Tip Amount:</label>
-                <div class="dual-output">
-                    <input type="text" id="tipAmountUSD" disabled placeholder="Tip in USD">
-                    <input type="text" id="tipAmountINR" disabled placeholder="Tip in INR">
-                </div>
+                <label for="tipPercentage">Tip Percentage:</label>
+                <input type="text" id="tipPercentage" name="tipPercentage" disabled>
             </div>
-
             <div class="form-group">
-                <label>Total Bill with Tip:</label>
-                <div class="dual-output">
-                    <input type="text" id="totalAmountUSD" disabled placeholder="Total in USD">
-                    <input type="text" id="totalAmountINR" disabled placeholder="Total in INR">
-                </div>
+                <label for="tipAmount">Tip Amount:</label>
+                <input type="text" id="tipAmount" name="tipAmount" disabled>
             </div>
-
-            <div id="error-message"></div>
+            <div class="form-group">
+                <label for="totalBill">Total Bill with Tip:</label>
+                <input type="text" id="totalBill" name="totalBill" disabled>
+            </div>
         </form>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
