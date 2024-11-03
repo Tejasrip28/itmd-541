@@ -87,14 +87,14 @@ input[type="text"][disabled] {
 #tipPercentage {
     font-size: 18px;
     font-weight: bold;
-    color: #2980b9;
+    color: #29b933;
     margin-top: 5px;
 }
 
 /* Slider customization */
 input[type="range"] {
     width: 100%;
-    background: #dfe6e9;
+    background: #e9dfe8;
     appearance: none;
     height: 8px;
     border-radius: 5px;
@@ -105,7 +105,7 @@ input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 20px;
     height: 20px;
-    background: #2980b9;
+    background: #5929b9;
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -124,7 +124,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .tip-percentage {
     font-size: 24px; /* Make it larger to stand out */
     font-weight: bold; /* Bold text for emphasis */
-    color: #2980b9; /* Use a different color */
+    color: #b6b929; /* Use a different color */
     margin-top: 10px; /* Add some space above */
     display: block; /* Ensure it displays on a new line */
 }
