@@ -27,14 +27,14 @@ body {
 }
 
 h1 {
-    color: #2c3e50;
+    color: #4CAF50; /* Brightened color for h1 (green) */
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #34495e;
+    color: #FF9800; /* Brightened color for h2 (orange) */
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 5px;
