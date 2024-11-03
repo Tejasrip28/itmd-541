@@ -1,13 +1,21 @@
-/body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #FFFFFF;
+/* Centering the main container */
+main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #FFFFFF;
     margin: 0;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container styling */
 .container {
     background-color: #FFFFFF;
     padding: 20px;
