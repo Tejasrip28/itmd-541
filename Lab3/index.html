@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tip Calculator</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="script.js">
 </head>
 <body>
 
@@ -17,8 +16,10 @@
       <input type="text" id="bill-total" placeholder="Enter bill amount">
 
       <label for="tip-percentage">Tip:</label>
-      <input type="range" id="tip-percentage" min="0" max="100" value="15">
-      <span id="tip-percent-display">15%</span>
+      <div class="tip-slider">
+        <input type="range" id="tip-percentage" min="0" max="100" value="15">
+        <span id="tip-percent-display">15%</span>
+      </div>
 
       <label for="tip-percentage-display">Tip Percentage:</label>
       <input type="text" id="tip-percentage-display" disabled>
