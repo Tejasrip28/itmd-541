@@ -1,42 +1,60 @@
-// DOM elements
-const billTotalInput = document.getElementById('bill-total');
-const tipPercentageInput = document.getElementById('tip-percentage');
-const tipPercentDisplay = document.getElementById('tip-percent-display');
-const tipPercentageDisplayInput = document.getElementById('tip-percentage-display');
-const tipAmountInput = document.getElementById('tip-amount');
-const totalWithTipInput = document.getElementById('total-with-tip');
+document.addEventListener('DOMContentLoaded', () => {
+    const billAmount = document.getElementById('billAmount');
+    const billError = document.getElementById('billError');
+    const tipRange = document.getElementById('tipRange');
+    const tipPercentage = document.getElementById('tipPercentage');
+    const tipAmountUSD = document.getElementById('tipAmountUSD');
+    const tipAmountINR = document.getElementById('tipAmountINR');
+    const totalAmountUSD = document.getElementById('totalAmountUSD');
+    const totalAmountINR = document.getElementById('totalAmountINR');
+    const errorMessage = document.getElementById('error-message');
 
-// Update tip percentage display
-tipPercentageInput.addEventListener('input', () => {
-  const tipPercent = tipPercentageInput.value;
-  tipPercentDisplay.textContent = `${tipPercent}%`;
-  tipPercentageDisplayInput.value = `${tipPercent}%`;
-  calculateTip();
+    const exchangeRateINR = 84.07;  // USD to INR conversion rate
+
+    const validateBill = () => {
+        const bill = parseFloat(billAmount.value);
+        if (isNaN(bill) || bill <= 0) {
+            billError.textContent = 'Please enter a valid bill amount!';
+            return false;
+        } else {
+            billError.textContent = '';
+            return true;
+        }
+    };
+
+    const calculateTip = () => {
+        if (!validateBill()) {
+            clearOutputs();
+            return;
+        }
+
+        const bill = parseFloat(billAmount.value);
+        const tipPercent = parseFloat(tipRange.value);
+
+        const calculatedTipUSD = (bill * tipPercent / 100).toFixed(2);
+        const calculatedTotalUSD = (bill + parseFloat(calculatedTipUSD)).toFixed(2);
+
+        const calculatedTipINR = (calculatedTipUSD * exchangeRateINR).toFixed(2);
+        const calculatedTotalINR = (calculatedTotalUSD * exchangeRateINR).toFixed(2);
+
+        // Update fields for USD
+        tipAmountUSD.value = `$${calculatedTipUSD}`;
+        totalAmountUSD.value = `$${calculatedTotalUSD}`;
+
+        // Update fields for INR
+        tipAmountINR.value = `₹${calculatedTipINR}`;
+        totalAmountINR.value = `₹${calculatedTotalINR}`;
+
+        tipPercentage.textContent = `${tipPercent}%`;
+    };
+
+    const clearOutputs = () => {
+        tipAmountUSD.value = '';
+        tipAmountINR.value = '';
+        totalAmountUSD.value = '';
+        totalAmountINR.value = '';
+    };
+
+    billAmount.addEventListener('input', calculateTip);
+    tipRange.addEventListener('input', calculateTip);
 });
-
-// Validate input and calculate tip
-billTotalInput.addEventListener('input', () => {
-  if (isNaN(billTotalInput.value) || billTotalInput.value < 0) {
-    alert("Please enter a valid positive number.");
-    billTotalInput.value = '';
-  } else {
-    calculateTip();
-  }
-});
-
-// Calculation function
-function calculateTip() {
-  const billTotal = parseFloat(billTotalInput.value);
-  const tipPercentage = parseInt(tipPercentageInput.value);
-
-  if (!isNaN(billTotal) && billTotal > 0) {
-    const tipAmount = billTotal * (tipPercentage / 100);
-    const totalWithTip = billTotal + tipAmount;
-
-    tipAmountInput.value = tipAmount.toFixed(2);
-    totalWithTipInput.value = totalWithTip.toFixed(2);
-  } else {
-    tipAmountInput.value = '';
-    totalWithTipInput.value = '';
-  }
-}
