@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalAmountUSD = document.getElementById('totalAmountUSD');
     const totalAmountINR = document.getElementById('totalAmountINR');
     const currencySelect = document.getElementById('currencySelect');
-    const tipForm = document.getElementById('tip-form');
 
     const exchangeRateINR = 84.07; // USD to INR conversion rate
 
@@ -61,11 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
         totalAmountINR.value = '';
     };
 
+    // Event listeners for inputs
     billAmount.addEventListener('input', calculateTip);
     tipRange.addEventListener('input', calculateTip);
-    currencySelect.addEventListener('change', calculateTip); // Update on currency change
-    tipForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent form submission
-        calculateTip(); // Calculate tip on form submission
-    });
+    currencySelect.addEventListener('change', calculateTip);
 });
