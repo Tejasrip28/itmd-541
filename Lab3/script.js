@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tipAmountINR = document.getElementById('tipAmountINR');
     const totalAmountUSD = document.getElementById('totalAmountUSD');
     const totalAmountINR = document.getElementById('totalAmountINR');
+    const currencySelect = document.getElementById('currencySelect');
+    const tipForm = document.getElementById('tip-form');
 
     const exchangeRateINR = 84.07; // USD to INR conversion rate
 
@@ -15,10 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isNaN(bill) || bill <= 0) {
             billError.textContent = 'Please enter a valid bill amount!';
             return false;
-        } else {
-            billError.textContent = '';
-            return true;
         }
+        billError.textContent = '';
+        return true;
     };
 
     const calculateTip = () => {
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const bill = parseFloat(billAmount.value);
         const tipPercent = parseFloat(tipRange.value);
+        const selectedCurrency = currencySelect.value;
 
         const calculatedTipUSD = (bill * tipPercent / 100).toFixed(2);
         const calculatedTotalUSD = (bill + parseFloat(calculatedTipUSD)).toFixed(2);
@@ -36,10 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const calculatedTipINR = (calculatedTipUSD * exchangeRateINR).toFixed(2);
         const calculatedTotalINR = (calculatedTotalUSD * exchangeRateINR).toFixed(2);
 
-        tipAmountUSD.value = `$${calculatedTipUSD}`;
-        totalAmountUSD.value = `$${calculatedTotalUSD}`;
-        tipAmountINR.value = `₹${calculatedTipINR}`;
-        totalAmountINR.value = `₹${calculatedTotalINR}`;
+        // Display results based on selected currency
+        if (selectedCurrency === 'USD') {
+            tipAmountUSD.value = `$${calculatedTipUSD}`;
+            totalAmountUSD.value = `$${calculatedTotalUSD}`;
+            tipAmountINR.value = '';
+            totalAmountINR.value = '';
+        } else {
+            tipAmountINR.value = `₹${calculatedTipINR}`;
+            totalAmountINR.value = `₹${calculatedTotalINR}`;
+            tipAmountUSD.value = '';
+            totalAmountUSD.value = '';
+        }
 
         tipPercentage.textContent = `${tipPercent}%`;
     };
@@ -53,4 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     billAmount.addEventListener('input', calculateTip);
     tipRange.addEventListener('input', calculateTip);
+    currencySelect.addEventListener('change', calculateTip); // Update on currency change
+    tipForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form submission
+        calculateTip(); // Calculate tip on form submission
+    });
 });
