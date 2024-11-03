@@ -29,7 +29,7 @@ h1 {
 }
 h2 {
     color: #34495e;  /* Match this color with the rest of the UI */
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     margin-bottom: 10px;
 }s
@@ -94,7 +94,7 @@ input[type="text"][disabled] {
 /* Slider customization */
 input[type="range"] {
     width: 100%;
-    background: #e9dfe8;
+    background: #a6e01e;
     appearance: none;
     height: 8px;
     border-radius: 5px;
@@ -131,14 +131,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 /* Existing styles for the form and other elements */
 h2 {
-    color: #5b345e;
+    color: #200422;
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
 h1 {
-    color: #30502c;
+    color: #39d924;
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 25px;
