@@ -1,107 +1,146 @@
-/* General styling */
+/* General body styling */
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
-    background-color: #FFFFFF;
 }
 
-/* Container styling */
+/* Container for the calculator */
 .container {
     background-color: #FFFFFF;
-    padding: 20px;
+    padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;  /* Keeps it compact on larger screens */
+    width: 400px;
     text-align: center;
     transition: all 0.3s ease;
-    margin: 10px;
 }
 
-/* Header styling */
 h1 {
     color: #2c3e50;
-    font-size: 1.5em;
+    font-size: 28px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     letter-spacing: 1px;
 }
-
 h2 {
-    color: #34495e;
-    font-size: 1.2em;
+    color: #34495e;  /* Match this color with the rest of the UI */
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}s
+
+/* Form groups styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    color: #75095e;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="range"] {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="range"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+input[type="text"][disabled] {
+    background-color: #f0f0f0;
+    color: #2270cf;
+}
+
+/* Error styling */
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+/* Styling for dual output fields for USD and INR */
+.dual-output {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dual-output input {
+    width: 48%;
+}
+
+/* Styling for percentage display */
+#tipPercentage {
+    font-size: 18px;
+    font-weight: bold;
+    color: #29b933;
+    margin-top: 5px;
+}
+
+/* Slider customization */
+input[type="range"] {
+    width: 100%;
+    background: #a6e01e;
+    appearance: none;
+    height: 8px;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #5929b9;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #3498db;
+}
+
+.container:hover {
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+}
+/* Add this to your existing CSS */
+
+/* Styling for the Tip Percentage display */
+.tip-percentage {
+    font-size: 24px; /* Make it larger to stand out */
+    font-weight: bold; /* Bold text for emphasis */
+    color: #b6b929; /* Use a different color */
+    margin-top: 10px; /* Add some space above */
+    display: block; /* Ensure it displays on a new line */
+}
+
+/* Existing styles for the form and other elements */
+h2 {
+    color: #200422;
+    font-size: 20px;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
-/* Form group styling */
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-/* Label and input styling */
-label {
-    color: #2c3e50;
-    font-weight: 500;
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-select {
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-/* Range input styling */
-input[type="range"] {
-    width: 100%;
-    margin-top: 5px;
-}
-
-.error {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 5px;
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    .container {
-        padding: 30px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Small screen adjustments */
-    h1 {
-        font-size: 1.3em;
-    }
-
-    h2 {
-        font-size: 1.1em;
-    }
-
-    input[type="text"],
-    select {
-        font-size: 0.9em;
-        padding: 8px;
-    }
+h1 {
+    color: #200422;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
 }
