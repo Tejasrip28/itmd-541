@@ -20,7 +20,7 @@ body {
     background-color: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
-    border: 2px solid black; /* Added black border */
+    border: 2px solid black; /* Added black border to container */
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 400px;
@@ -46,11 +46,14 @@ h2 {
     text-align: left;
 }
 
+/* Add borders to labels */
 label {
     font-weight: 500;
     display: block;
     margin-bottom: 5px;
     color: #75095e;
+    border: 1px solid black; /* Added black border for labels */
+    padding: 5px; /* Added padding for better spacing */
 }
 
 input[type="text"], input[type="range"], select {
