@@ -118,3 +118,29 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .container:hover {
     box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
 }
+/* Add this to your existing CSS */
+
+/* Styling for the Tip Percentage display */
+.tip-percentage {
+    font-size: 24px; /* Make it larger to stand out */
+    font-weight: bold; /* Bold text for emphasis */
+    color: #2980b9; /* Use a different color */
+    margin-top: 10px; /* Add some space above */
+    display: block; /* Ensure it displays on a new line */
+}
+
+/* Existing styles for the form and other elements */
+h2 {
+    color: #34495e;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
