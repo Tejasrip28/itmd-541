@@ -131,14 +131,14 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 /* Existing styles for the form and other elements */
 h2 {
-    color: #34495e;
+    color: #5b345e;
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
 h1 {
-    color: #502c2d;
+    color: #30502c;
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 25px;
