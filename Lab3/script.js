@@ -7,9 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tipAmountINR = document.getElementById('tipAmountINR');
     const totalAmountUSD = document.getElementById('totalAmountUSD');
     const totalAmountINR = document.getElementById('totalAmountINR');
-    const errorMessage = document.getElementById('error-message');
 
-    const exchangeRateINR = 84.07;  // USD to INR conversion rate
+    const exchangeRateINR = 84.07; // USD to INR conversion rate
 
     const validateBill = () => {
         const bill = parseFloat(billAmount.value);
@@ -37,15 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const calculatedTipINR = (calculatedTipUSD * exchangeRateINR).toFixed(2);
         const calculatedTotalINR = (calculatedTotalUSD * exchangeRateINR).toFixed(2);
 
-        // Update fields for USD
-        tipAmountUSD.value = $${calculatedTipUSD};
-        totalAmountUSD.value = $${calculatedTotalUSD};
+        tipAmountUSD.value = `$${calculatedTipUSD}`;
+        totalAmountUSD.value = `$${calculatedTotalUSD}`;
+        tipAmountINR.value = `₹${calculatedTipINR}`;
+        totalAmountINR.value = `₹${calculatedTotalINR}`;
 
-        // Update fields for INR
-        tipAmountINR.value = ₹${calculatedTipINR};
-        totalAmountINR.value = ₹${calculatedTotalINR};
-
-        tipPercentage.textContent = ${tipPercent}%;
+        tipPercentage.textContent = `${tipPercent}%`;
     };
 
     const clearOutputs = () => {

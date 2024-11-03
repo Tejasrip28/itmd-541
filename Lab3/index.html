@@ -4,27 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tip Calculator</title>
-    <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="script.js">
 </head>
 <body>
     <div class="container">
-        <h2>ITMD 4/541 -Lab 3 - Tejasri</h2>  <!-- Add your name here -->
+        <h2>ITMD 4/541 - Lab 3 - Tejasri</h2>
         <h1>Tip Calculator</h1>
         
         <form id="tip-form">
             <div class="form-group">
                 <label for="billAmount">Bill Total (USD):</label>
-                <input type="text" id="billAmount" placeholder="Enter total bill in USD" required>
+                <input type="text" id="billAmount" placeholder="Enter total bill in USD">
                 <div class="error" id="billError"></div>
             </div>
 
             <div class="form-group">
                 <label for="tipRange">Tip Percentage:</label>
                 <input type="range" id="tipRange" min="0" max="100" value="15">
-                <span id="tipPercentage" class="tip-percentage">0%</span>
+                <span id="tipPercentage" class="tip-percentage">15%</span>
             </div>
 
             <div class="form-group">
@@ -42,8 +41,6 @@
                     <input type="text" id="totalAmountINR" disabled placeholder="Total in INR">
                 </div>
             </div>
-
-            <div id="error-message"></div>
         </form>
     </div>
 

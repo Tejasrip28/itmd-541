@@ -1,5 +1,4 @@
-/* General body styling */
-body {
+/body {
     font-family: 'Roboto', sans-serif;
     background-color: #FFFFFF;
     display: flex;
@@ -9,32 +8,30 @@ body {
     margin: 0;
 }
 
-/* Container for the calculator */
 .container {
     background-color: #FFFFFF;
-    padding: 30px;
-    border-radius: 15px;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
-    transition: all 0.3s ease;
 }
 
 h1 {
     color: #2c3e50;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
-    margin-bottom: 25px;
-    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
-h2 {
-    color: #34495e;  /* Match this color with the rest of the UI */
-    font-size: 25px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}s
 
-/* Form groups styling */
+h2 {
+    color: #34495e;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -43,23 +40,17 @@ h2 {
 label {
     font-weight: 500;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     color: #75095e;
-    font-size: 16px;
 }
 
 input[type="text"], input[type="range"] {
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 6px;
     border: 1px solid #dcdde1;
-    margin-bottom: 10px;
-    transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus, input[type="range"]:focus {
-    border-color: #3498db;
-    outline: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 input[type="text"][disabled] {
@@ -67,13 +58,11 @@ input[type="text"][disabled] {
     color: #2270cf;
 }
 
-/* Error styling */
 .error {
     color: red;
-    font-size: 14px;
+    font-size: 12px;
 }
 
-/* Styling for dual output fields for USD and INR */
 .dual-output {
     display: flex;
     justify-content: space-between;
@@ -83,15 +72,15 @@ input[type="text"][disabled] {
     width: 48%;
 }
 
-/* Styling for percentage display */
-#tipPercentage {
+.tip-percentage {
     font-size: 18px;
     font-weight: bold;
-    color: #29b933;
+    color: #b6b929;
+    display: block;
+    text-align: right;
     margin-top: 5px;
 }
 
-/* Slider customization */
 input[type="range"] {
     width: 100%;
     background: #a6e01e;
@@ -108,39 +97,8 @@ input[type="range"]::-webkit-slider-thumb {
     background: #5929b9;
     border-radius: 50%;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
     background: #3498db;
-}
-
-.container:hover {
-    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
-}
-/* Add this to your existing CSS */
-
-/* Styling for the Tip Percentage display */
-.tip-percentage {
-    font-size: 24px; /* Make it larger to stand out */
-    font-weight: bold; /* Bold text for emphasis */
-    color: #b6b929; /* Use a different color */
-    margin-top: 10px; /* Add some space above */
-    display: block; /* Ensure it displays on a new line */
-}
-
-/* Existing styles for the form and other elements */
-h2 {
-    color: #200422;
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-h1 {
-    color: #200422;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    letter-spacing: 1px;
 }
