@@ -9,7 +9,7 @@ main {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
     margin: 0;
     height: 100vh;
     overflow: hidden;
