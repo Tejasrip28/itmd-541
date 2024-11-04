@@ -15,12 +15,12 @@ body {
     overflow: hidden;
 }
 
-/* styling the container */
+/*  container styling */
 .container {
     background-color: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
-    border: 2px solid black; /* Added black border to container */
+    border: 2px solid black;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 400px;
@@ -37,7 +37,7 @@ h1 {
 h2 {
     color: #34495e; 
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 5px;
 }
 
@@ -46,12 +46,18 @@ h2 {
     text-align: left;
 }
 
-/* Styling for input boxes with black borders */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: #75095e;
+}
+
 input[type="text"], input[type="range"], select {
     padding: 8px;
     font-size: 14px;
     border-radius: 6px;
-    border: 2px solid black; /* Added black border for all input boxes */
+    border: 1px solid #dcdde1;
     width: 100%;
     box-sizing: border-box;
 }
@@ -73,7 +79,6 @@ input[type="text"][disabled] {
 
 .dual-output input {
     width: 48%;
-    border: 2px solid black; /* Added black border for dual output inputs */
 }
 
 .tip-percentage {
@@ -87,7 +92,7 @@ input[type="text"][disabled] {
 
 input[type="range"] {
     width: 100%;
-    background: #a6e01e; /* Keeping original background color */
+    background: #a6e01e;
     appearance: none;
     height: 8px;
     border-radius: 5px;
@@ -98,11 +103,8 @@ input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 20px;
     height: 20px;
-    background: #5929b9; /* Keeping original thumb color */
+    background: #5929b9;
     border-radius: 50%;
     cursor: pointer;
 }
 
-input[type="range"]::-webkit-slider-thumb:hover {
-    background: #3498db; /* Keeping original hover color */
-}
