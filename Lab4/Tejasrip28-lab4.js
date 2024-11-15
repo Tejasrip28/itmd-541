@@ -66,3 +66,15 @@ adsClickIcon.textContent = "ads_click";
 }
 
 
+/*8. In the “Specialized Marketing Solutions” section make a change to the
+layout of the tiles so that at >= 1024px they are 4 across instead of 2 across*/
+
+const styleTag = document.createElement("style");
+styleTag.textContent = `
+@media (min-width: 1024px) {
+    #solutions .grid-cols-1.md\\:grid-cols-2 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+`;
+document.head.appendChild(styleTag);
