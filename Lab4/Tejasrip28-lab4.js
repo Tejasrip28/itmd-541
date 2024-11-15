@@ -37,3 +37,13 @@ const pageFooter = document.querySelector('footer');
 if (navBar && pageFooter) {
 navBar.style.backgroundColor = window.getComputedStyle(pageFooter).backgroundColor;
 }
+
+
+//5. Remove the get started Call-to-action (CTA) from the hero.
+
+const heroCTA = document.querySelector('#hero a');
+if (heroCTA) {
+heroCTA.remove();
+}
+
+
