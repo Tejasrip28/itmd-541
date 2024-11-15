@@ -55,3 +55,14 @@ serviceIcons.forEach(serviceIcon => {
 });
 
 
+/*7. The icons use the “Material Symbols Outlined” library. Change the digital
+marketing icon to use ‘Ads Click’ instead of the current icon.
+https://fonts.google.com/icons?selected=Material+Symbols+Outlined:ads_click:FIL
+L@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%23e8eaed*/
+
+const adsClickIcon = document.querySelector('#services .material-symbols-outlined[data-icon="digital"]');
+if (adsClickIcon) {
+adsClickIcon.textContent = "ads_click";
+}
+
+
