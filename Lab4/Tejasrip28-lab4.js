@@ -87,3 +87,31 @@ const musicianImg = document.querySelector('#solutions img[alt="Musicians"]');
 if (musicianImg) {
 musicianImg.src = "https://picsum.photos/id/453/400/300";
 }
+
+
+/*Graduate Additional Requirements
+When a user submits the form, the following should happen:
+ If the user has provided a name and email you should show an alert box with the
+following text in it and replace the name and email from the data in the form.
+o “Thank you, name! We will be in touch with you shortly at email. “
+ If the user did not input a name or email in the form show an alert box with the
+following text.
+o “Please provide a name and email. “
+ Make sure the form does not try to go to the broken URL in either case.*/
+
+const contactFormElement = document.querySelector('#contact form');
+if (contactFormElement) {
+contactFormElement.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission to contact.html
+
+    const userName = document.querySelector('#name').value.trim();
+    const userEmail = document.querySelector('#email').value.trim();
+
+    if (userName && userEmail) {
+        alert(`Thank you, ${userName}! We will be in touch with you shortly at ${userEmail}.`);
+    } else {
+        alert("Please provide a name and email.");
+    }
+});
+}
+
