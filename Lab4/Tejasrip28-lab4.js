@@ -1,13 +1,12 @@
+//IIFE (Immediately Invoked Function Expression)
+
+/*1. In the hero section change the main headline to the following text (do not
+include the wrapping quotes):
+“Supercharge Your Brand with Stellar Marketing”*/
+
+
 (function() {
-    if (window.location.href === "https://illinoistech-itm.github.io/ITMD4541-F24/lab4/") {
-        console.log("Running script on the specified page.");
+    document.querySelector('#hero h1').textContent = "Supercharge Your Brand with Stellar Marketing";
+    })();
 
-        // Change the main headline
-        document.querySelector('.hero-headline-selector').textContent = "Supercharge Your Brand with Stellar Marketing";
 
-        // Additional code here...
-
-    } else {
-        console.log("This script only runs on the specified website.");
-    }
-})();
