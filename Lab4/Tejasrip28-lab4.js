@@ -47,3 +47,11 @@ heroCTA.remove();
 }
 
 
+//6. In the services section change the icons color to a light blue (#6495ed)
+
+const serviceIcons = document.querySelectorAll('#services .material-symbols-outlined');
+serviceIcons.forEach(serviceIcon => {
+    serviceIcon.style.color = "#6495ed";
+});
+
+
