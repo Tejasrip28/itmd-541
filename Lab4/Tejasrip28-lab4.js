@@ -78,3 +78,12 @@ styleTag.textContent = `
 }
 `;
 document.head.appendChild(styleTag);
+
+
+/*9. In the same section change the Musicians image to the following:
+https://picsum.photos/id/453/400/300*/
+
+const musicianImg = document.querySelector('#solutions img[alt="Musicians"]');
+if (musicianImg) {
+musicianImg.src = "https://picsum.photos/id/453/400/300";
+}
