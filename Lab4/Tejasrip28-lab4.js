@@ -28,3 +28,12 @@ if (heroSection) {
     heroSection.style.backgroundImage = "url('https://picsum.photos/id/683/1280/720')";
 }
 
+
+/*4. Change the background color of the nav bar to the same color that is used in
+the footer*/
+
+const navBar = document.querySelector('header');
+const pageFooter = document.querySelector('footer');
+if (navBar && pageFooter) {
+navBar.style.backgroundColor = window.getComputedStyle(pageFooter).backgroundColor;
+}
