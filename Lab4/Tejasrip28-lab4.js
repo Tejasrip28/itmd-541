@@ -39,19 +39,6 @@ navBar.style.backgroundColor = window.getComputedStyle(pageFooter).backgroundCol
 }
 
 
-
-/* Task 4: Match the navigation bar's background color to the footer's background color */
-
-const navigationBar = document.querySelector('header');
-const footer = document.querySelector('footer');
-
-if (navigationBar && footer) {
-    const footerBackgroundColor = getComputedStyle(footer).backgroundColor;
-    navigationBar.style.backgroundColor = footerBackgroundColor;
-}
-
-
-
 //5. Remove the get started Call-to-action (CTA) from the hero.
 
 const heroCTA = document.querySelector('#hero a');
@@ -73,32 +60,32 @@ marketing icon to use ‘Ads Click’ instead of the current icon.
 https://fonts.google.com/icons?selected=Material+Symbols+Outlined:ads_click:FIL
 L@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%23e8eaed*/
 
-const adsClickIcon = document.querySelector('#services .material-symbols-outlined[data-icon="digital"]');
-if (adsClickIcon) {
-adsClickIcon.textContent = "ads_click";
+const digitalMarketingIcon = document.querySelector('#services .material-symbols-outlined[data-icon="digital"]');
+if (digitalMarketingIcon) {
+    digitalMarketingIcon.textContent = "ads_click";
 }
 
 
 /*8. In the “Specialized Marketing Solutions” section make a change to the
 layout of the tiles so that at >= 1024px they are 4 across instead of 2 across*/
 
-const styleTag = document.createElement("style");
-styleTag.textContent = `
+const customStyle = document.createElement("style");
+customStyle.textContent = `
 @media (min-width: 1024px) {
     #solutions .grid-cols-1.md\\:grid-cols-2 {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 `;
-document.head.appendChild(styleTag);
+document.head.appendChild(customStyle);
 
 
 /*9. In the same section change the Musicians image to the following:
 https://picsum.photos/id/453/400/300*/
 
-const musicianImg = document.querySelector('#solutions img[alt="Musicians"]');
-if (musicianImg) {
-musicianImg.src = "https://picsum.photos/id/453/400/300";
+const musicianImage = document.querySelector('#solutions img[alt="Musicians"]');
+if (musicianImage) {
+    musicianImage.src = "https://picsum.photos/id/453/400/300";
 }
 
 
@@ -112,19 +99,45 @@ following text.
 o “Please provide a name and email. “
  Make sure the form does not try to go to the broken URL in either case.*/
 
-const contactFormElement = document.querySelector('#contact form');
-if (contactFormElement) {
-contactFormElement.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission to contact.html
 
-    const userName = document.querySelector('#name').value.trim();
-    const userEmail = document.querySelector('#email').value.trim();
+const contactForm = document.querySelector('#contact form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default behavior of form submission
 
-    if (userName && userEmail) {
-        alert(`Thank you, ${userName}! We will be in touch with you shortly at ${userEmail}.`);
-    } else {
-        alert("Please provide a name and email.");
-    }
-});
+        const nameInput = document.querySelector('#name').value.trim();
+        const emailInput = document.querySelector('#email').value.trim();
+
+        if (nameInput && emailInput) {
+            alert(`Thank you, ${nameInput}! We will be in touch with you shortly at ${emailInput}.`);
+        } else {
+            alert("Please provide a name and email.");
+        }
+    });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
