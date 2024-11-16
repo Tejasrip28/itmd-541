@@ -39,6 +39,19 @@ navBar.style.backgroundColor = window.getComputedStyle(pageFooter).backgroundCol
 }
 
 
+
+/* Task 4: Match the navigation bar's background color to the footer's background color */
+
+const navigationBar = document.querySelector('header');
+const footer = document.querySelector('footer');
+
+if (navigationBar && footer) {
+    const footerBackgroundColor = getComputedStyle(footer).backgroundColor;
+    navigationBar.style.backgroundColor = footerBackgroundColor;
+}
+
+
+
 //5. Remove the get started Call-to-action (CTA) from the hero.
 
 const heroCTA = document.querySelector('#hero a');
